@@ -2,9 +2,9 @@
 session_start();
 
   include("auth_check.php");
-   header("Location: note_view.php");
    exit();
 ?>
+
 
 
 
