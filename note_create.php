@@ -11,7 +11,7 @@ if (isset($_POST['note'])) {
 
  $note_insert = "INSERT INTO `note`( `user_id`, `title`, `content` ) VALUES ('$user_id','$title','$content')";
         if ($conn->query($note_insert) === true) {
-            header("Location: note_view.php");
+            header("Location:");
             exit();
         }
  
@@ -24,3 +24,4 @@ if (isset($_POST['note'])) {
 
     <button type="submit" name="note">Add Note</button>
 </form>
+
