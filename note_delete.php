@@ -10,12 +10,6 @@ if (!isset($_SESSION['user_id'])) {
 }
 $user_id = intval($_SESSION['user_id']);
 
-
-if (!isset($_GET['id'])) {
-    header("Location: note_view.php");
-    exit();
-}
-
 $id = intval($_GET['id']);
 
 $stmt = $conn->prepare("DELETE FROM note WHERE id = ? AND user_id = ?");
@@ -23,9 +17,10 @@ $stmt->bind_param("ii", $id, $user_id);
 
 if ($stmt->execute()) {
     $stmt->close();
-    header("Location: note_view.php");
+    header("Location:node_create.php ");
     exit();
 } else {
     echo "Error deleting note: " . $conn->error;
 }
 ?>
+
